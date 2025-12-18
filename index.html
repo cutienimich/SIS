@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Inventory System (SIS)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <button id="sidebar-toggle" aria-label="Toggle sidebar"><i class="fas fa-bars"></i></button>
+        <h1><img src="/sis.png" alt="SIS Logo"> Smart Inventory System</h1>
+        <button id="scanner-btn"><i class="fas fa-qrcode"></i> Scanner</button>
+    </header>
+    <div class="container">
+        <aside>
+            <ul class="sidebar-menu">
+                <li class="sidebar-item active" data-tab="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</li>
+                <li class="sidebar-item" data-tab="products"><i class="fas fa-box"></i> Products</li>
+                <li class="sidebar-item" data-tab="stores"><i class="fas fa-store"></i> Stores</li>
+                <li class="sidebar-item" data-tab="cart"><i class="fas fa-shopping-cart"></i> Shopping Cart</li>
+                <li class="sidebar-item" data-tab="notifications"><i class="fas fa-bell"></i> Notifications</li>
+                <li class="sidebar-item" data-tab="orders"><i class="fas fa-truck"></i> Order Tracking</li>
+                <li class="sidebar-item" data-tab="reports"><i class="fas fa-chart-bar"></i> Reporting & Analytics</li>
+                <li class="sidebar-item" data-tab="admin"><i class="fas fa-user-shield"></i> Admin Panel</li>
+                <li class="sidebar-item" data-tab="chat"><i class="fas fa-comments"></i> Chat</li>
+                <li class="sidebar-item" data-tab="settings"><i class="fas fa-cog"></i> Settings</li>
+            </ul>
+        </aside>
+        <main>
+        <div id="dashboard" class="panel active">
+            <h2>Dashboard / Overview</h2>
+            <div class="cards">
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Total Products</h3>
+                    <p>150</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Items in Cart</h3>
+                    <p>5</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Low Stock Alerts</h3>
+                    <p>3</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Pending Orders</h3>
+                    <p>12</p>
+                </div>
+            </div>
+            <div class="ai-summary">
+                <h3>AI Weekly Sales Summary</h3>
+                <p>Your weekly sales have increased by 15% compared to last week. Top-selling product: Laptop (25 units). Recommendations: Reorder Mouse stock as it's running low. Supplier performance: ABC Suppliers delivered 98% on time.</p>
+            </div>
+        </div>
+        <div id="products" class="panel">
+            <h2>My Inventory</h2>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Stock Left</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Products will be populated by JS -->
+                </tbody>
+            </table>
+        </div>
+        <div id="cart" class="panel">
+            <h2>Shopping Cart / Checkout</h2>
+            <div class="cart-items">
+                <!-- Cart items will be populated by JS -->
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+        <div id="notifications" class="panel">
+            <h2>Notifications</h2>
+            <div class="notification-list">
+                <!-- Notifications will be populated by JS -->
+            </div>
+        </div>
+        <div id="orders" class="panel">
+            <h2>Order Tracking</h2>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Orders will be populated by JS -->
+                </tbody>
+            </table>
+        </div>
+        <div id="admin" class="panel">
+            <h2>Admin Panel</h2>
+            <div class="admin-tabs">
+                <button class="sub-tab active" data-subtab="users">Users</button>
+                <button class="sub-tab" data-subtab="products-admin">Products</button>
+                <button class="sub-tab" data-subtab="transactions">Transactions</button>
+            </div>
+            <div id="users" class="sub-panel active">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Users will be populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="products-admin" class="sub-panel">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Stock</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Products will be populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="transactions" class="sub-panel">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Transactions will be populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="chat" class="panel">
+            <h2>In-App Chat</h2>
+            <div class="chat-window">
+                <div class="chat-messages">
+                    <!-- Messages will be populated by JS -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" placeholder="Type a message...">
+                    <button aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="stores" class="panel">
+            <h2>Stores</h2>
+            <table class="stores-table">
+                <thead>
+                    <tr>
+                        <th>Store Name</th>
+                        <th>Product</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Stores will be populated by JS -->
+                </tbody>
+            </table>
+        </div>
+        <div id="reports" class="panel">
+            <h2>Reporting & Analytics</h2>
+            <div class="reports-content">
+                <div class="report-card">
+                    <h3>Sales Report</h3>
+                    <p>Total Sales: $45,230</p>
+                    <p>Growth: +12% this month</p>
+                </div>
+                <div class="report-card">
+                    <h3>Inventory Turnover</h3>
+                    <p>Turnover Rate: 4.5 times/year</p>
+                    <p>Average Stock Level: 120 units</p>
+                </div>
+                <div class="report-card">
+                    <h3>Top Products</h3>
+                    <ul>
+                        <li>Laptop: 150 sold</li>
+                        <li>Mouse: 120 sold</li>
+                        <li>Keyboard: 95 sold</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="settings" class="panel">
+            <h2>Settings</h2>
+            <div class="settings-content">
+                <div class="setting-item">
+                    <label for="theme-select">Theme:</label>
+                    <select id="theme-select">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="notifications-toggle">Enable Notifications:</label>
+                    <input type="checkbox" id="notifications-toggle" checked>
+                </div>
+                <div class="setting-item">
+                    <label for="language-select">Language:</label>
+                    <select id="language-select">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                    </select>
+                </div>
+                <button class="save-btn">Save Settings</button>
+            </div>
+        </div>
+        </main>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Terms of Condition</h4>
+                <p>Read our terms and conditions for using the Smart Inventory System.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Learn more about our mission to revolutionize inventory management.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Get in touch with our support team for assistance.</p>
+                <a href="#">Contact Support</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Smart Inventory System. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Modal for checkout or other interactions -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Checkout Confirmation</h3>
+            <p>Are you sure you want to proceed with the checkout?</p>
+            <button class="confirm-btn">Confirm</button>
+            <button class="cancel-btn">Cancel</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
