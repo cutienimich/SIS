@@ -550,8 +550,6 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        text-align: center;
         padding: 0.5rem;
     }
 
@@ -571,29 +569,33 @@ footer {
     }
 
     .container {
-        position: relative;
+        flex-direction: column;
     }
 
     aside {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 250px;
-        height: 100vh;
+        position: static;
+        width: 100%;
+        height: auto;
         background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
         padding: 1rem;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-    }
-
-    aside:not(.collapsed) {
-        transform: translateX(0);
+        border-right: none;
+        box-shadow: none;
+        transform: none;
+        transition: none;
     }
 
     aside.collapsed {
-        transform: translateX(-100%);
+        display: none;
+    }
+
+    aside:not(.collapsed) {
+        display: block;
+    }
+
+    #scanner-btn {
+        margin-bottom: 1rem;
+        width: 100%;
+        display: block;
     }
 
     main {
@@ -676,6 +678,7 @@ footer {
 
     aside {
         width: 200px;
+       
     }
 
     main {
