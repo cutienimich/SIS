@@ -565,8 +565,9 @@ footer {
     }
 
     #sidebar-toggle, #scanner-btn {
-        padding: 0.4rem 0.8rem;
-        font-size: 1rem;
+        padding: 0.6rem 1rem;
+        font-size: 1.1rem;
+        min-height: 44px;
     }
 
     .container {
@@ -614,6 +615,7 @@ footer {
 
     table {
         font-size: 0.8rem;
+        overflow-x: auto;
     }
 
     .modal-content {
@@ -628,5 +630,156 @@ footer {
 
     .footer-section {
         margin-bottom: 2rem;
+    }
+
+    .action-btn {
+        padding: 0.5rem 0.75rem;
+        min-height: 36px;
+    }
+
+    .checkout-btn, .save-btn {
+        padding: 0.75rem 1.5rem;
+        min-height: 44px;
+    }
+
+    .sub-tab {
+        padding: 0.75rem 1rem;
+        min-height: 44px;
+    }
+
+    .confirm-btn, .cancel-btn {
+        padding: 0.5rem 1rem;
+        min-height: 44px;
+    }
+
+    .chat-input button {
+        padding: 0.5rem 1rem;
+        min-height: 44px;
+    }
+}
+
+/* Responsive for small phones */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1rem;
+    }
+
+    header h1 img {
+        height: 25px;
+    }
+
+    #sidebar-toggle, #scanner-btn {
+        padding: 0.6rem 1rem;
+        font-size: 1.1rem;
+        min-height: 44px;
+    }
+
+    aside {
+        width: 200px;
+    }
+
+    main {
+        padding: 0.5rem;
+    }
+
+    .panel {
+        padding: 1rem;
+    }
+
+    .cards {
+        gap: 0.5rem;
+    }
+
+    .card {
+        padding: 0.75rem;
+    }
+
+    .card i {
+        font-size: 1.5rem;
+    }
+
+    .card h3 {
+        font-size: 0.9rem;
+    }
+
+    table {
+        font-size: 0.7rem;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 0.5rem 0.25rem;
+    }
+
+    .sidebar-item {
+        padding: 1rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .checkout-btn, .save-btn, .confirm-btn, .cancel-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1.1rem;
+        min-height: 44px;
+    }
+
+    .action-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+        min-height: 36px;
+    }
+
+    .sub-tab {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+        min-height: 44px;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 1.5rem;
+    }
+
+    .footer-content {
+        padding: 0 1rem;
+    }
+
+    .footer-section {
+        margin-bottom: 1.5rem;
+    }
+
+    .chat-input input {
+        padding: 0.75rem;
+    }
+
+    .chat-input button {
+        padding: 0.75rem 1rem;
+        min-height: 44px;
+    }
+}
+
+/* Responsive for large screens */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .cards {
+        justify-content: center;
+    }
+
+    .reports-content {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    main {
+        padding: 3rem;
+    }
+
+    .panel {
+        padding: 3rem;
     }
 }
